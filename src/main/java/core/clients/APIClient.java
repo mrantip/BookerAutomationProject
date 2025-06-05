@@ -90,12 +90,13 @@ public class APIClient {
                 .response();
     }
 
-    public Response getBookingById(String id) {
+    public Response getBookingById(int bookingId) {
         return getRequestSpec()
+                .pathParam("id", bookingId)
                 .when()
-                .get(ApiEndpoints.BOOKING.getPath() + "/" + id)
+                .get(ApiEndpoints.BOOKING.getPath() + "/{id}")
                 .then()
-                .statusCode(200)
+//                .statusCode(200)
                 .extract()
                 .response();
     }

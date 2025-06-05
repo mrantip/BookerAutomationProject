@@ -36,5 +36,6 @@ public class DeleteBookingTest {
 
         Response deleteBooking = apiClient.deleteBooking(bookingId);
         assertThat(deleteBooking.statusCode()).isEqualTo(201);
+        assertThat(apiClient.getBookingById(bookingId).statusCode()).isEqualTo(404);
     }
 }

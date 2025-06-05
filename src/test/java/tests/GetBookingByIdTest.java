@@ -23,7 +23,7 @@ public class GetBookingByIdTest {
 
     @Test
     public void testBookingById() throws Exception {
-        Response response = apiClient.getBookingById("1");
+        Response response = apiClient.getBookingById(1);
 
         assertThat(response.getStatusCode()).isEqualTo(200);
         String responseBody = response.getBody().asString();
